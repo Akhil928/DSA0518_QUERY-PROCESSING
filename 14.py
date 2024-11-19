@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 
-# Sample data based on your provided image
 data = {
     'ord_no': [70001, np.nan, 70002, 70004, np.nan, 70005, '--', 70010, 70003, 70012, np.nan, 70013],
     'purch_amt': [150.5, 270.65, 65.26, 110.5, 948.5, 2400.6, 5760, '?', 12.43, 2480.4, 250.45, 3045.6],
@@ -13,15 +12,11 @@ data = {
 
 df = pd.DataFrame(data)
 
-# Step 1: Replace '?' and '--' with NaN
 df.replace(['?', '--'], np.nan, inplace=True)
 
-# Step 2: Display the DataFrame with missing values replaced
 print("DataFrame after replacing '?' and '--' with NaN:")
 print(df)
 
-# Step 3: Optionally, handle missing values (fill, drop, etc.)
-# Example: Drop rows with any NaN values
 cleaned_df = df.dropna()
 print("\nDataFrame after dropping rows with NaN values:")
 print(cleaned_df)
